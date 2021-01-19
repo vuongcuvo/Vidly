@@ -207,9 +207,22 @@
     <Compile Include="Migrations\202101190728314_AddBirthdateToCustomer.Designer.cs">
       <DependentUpon>202101190728314_AddBirthdateToCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202101191146264_AddSomeNewColumnsToMoviesTable.cs" />
+    <Compile Include="Migrations\202101191146264_AddSomeNewColumnsToMoviesTable.Designer.cs">
+      <DependentUpon>202101191146264_AddSomeNewColumnsToMoviesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101191201193_PopulateGenresTable.cs" />
+    <Compile Include="Migrations\202101191201193_PopulateGenresTable.Designer.cs">
+      <DependentUpon>202101191201193_PopulateGenresTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101191238181_UpdateMoviesTable.cs" />
+    <Compile Include="Migrations\202101191238181_UpdateMoviesTable.Designer.cs">
+      <DependentUpon>202101191238181_UpdateMoviesTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
@@ -321,6 +334,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202101190728314_AddBirthdateToCustomer.resx">
       <DependentUpon>202101190728314_AddBirthdateToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101191146264_AddSomeNewColumnsToMoviesTable.resx">
+      <DependentUpon>202101191146264_AddSomeNewColumnsToMoviesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101191201193_PopulateGenresTable.resx">
+      <DependentUpon>202101191201193_PopulateGenresTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101191238181_UpdateMoviesTable.resx">
+      <DependentUpon>202101191238181_UpdateMoviesTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
