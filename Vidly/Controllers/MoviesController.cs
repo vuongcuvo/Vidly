@@ -40,8 +40,7 @@ namespace Vidly.Controllers
         [Route("movies/{index?}")]
         public ViewResult Index()
         {
-            var movies = _context.Movies.Include(m => m.Genre);
-            return View(movies);
+            return View();
         }
 
         [Route("movies/details/{id}")]
