@@ -24,7 +24,7 @@
         $(document).ready(function () {
             var table = $("#customers").DataTable({
                 ajax: {
-                    url: "/api/customers/",
+                    url: "/api/customers?query=",
                     dataSrc: ""
                 },
                 columns: [

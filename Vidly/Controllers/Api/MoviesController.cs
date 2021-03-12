@@ -18,12 +18,19 @@ namespace Vidly.Controllers.Api
             _context = new ApplicationDbContext();
         }
 
-        public IHttpActionResult GetMovies()
+        public IHttpActionResult GetMovies(string query)
         {
-            return Ok(_context.Movies
-                .Include(m=>m.Genre)
-                .ToList()
-                .Select(Mapper.Map<Movie, MovieDto>));
+            var moviesQuery = _context.Movies
+                .Include(m => m.Genre)
+                .Where(m => m.NumberAvailability > 0);
+
+            if (!String.IsNullOrWhiteSpace(query))
+                moviesQuery = moviesQuery.Where(m => m.Name.Contains(query));
+
+            var movieDtos = moviesQuery
+                .Select(Mapper.Map<Movie, MovieDto>);
+
+            return Ok(movieDtos);
         }
 
         public IHttpActionResult GetMovie(int id)
@@ -42,6 +49,7 @@ namespace Vidly.Controllers.Api
             if (!ModelState.IsValid)
                 return BadRequest();
 
+            movieDto.NumberAvailability = movieDto.NumberInStock;
             var movie = Mapper.Map<MovieDto, Movie>(movieDto);
             _context.Movies.Add(movie);
             _context.SaveChanges();

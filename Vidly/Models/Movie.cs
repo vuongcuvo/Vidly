@@ -19,6 +19,10 @@ namespace Vidly.Models
         [Range(0, 20)]
         public byte NumberInStock { get; set; }
 
+        [Display(Name = "Availability Number")]
+        [Range(0, 20)]
+        public byte NumberAvailability { get; set; }
+
         [Display(Name = "Genre")]
         public byte GenreId { get; set; }
 
